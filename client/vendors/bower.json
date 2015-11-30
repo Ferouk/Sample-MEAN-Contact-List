@@ -1,0 +1,51 @@
+{
+  "name": "ContacListApp",
+  "authors": [
+    "Ferouk"
+  ],
+  "description": "Simple mean contact list app",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4"
+  },
+  "cInstall": {
+    "folder": {
+      "js": "js/",
+      "css": "css/",
+      "png, jpg, jpeg, gif": "img/",
+      "otf, eot, svg, ttf, woff, woff2": "fonts/"
+    },
+    "option": {
+      "removeAfter": true,
+      "min": {
+        "get": true
+      }
+    },
+    "source": {
+      "bootstrap": {
+        "glyphicons-halflings-regular.*": "dist/fonts/*",
+        "bootstrap.min.js": "dist/js/bootstrap.min.js",
+        "bootstrap.min.css": "dist/css/bootstrap.min.css",
+        "bootstrap-theme.min.css": "dist/css/bootstrap-theme.min.css"
+      },
+      "angular": {
+        "angular.min.js": "angular.min.js"
+      },
+      "jquery": {
+        "jquery.min.js": "dist/jquery.min.js"
+      }
+    }
+  }
+}

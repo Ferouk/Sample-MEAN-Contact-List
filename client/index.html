@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>ContactList App</title>
+    <link rel="stylesheet" href="/vendors/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <div class="container" ng-controller="appCtrl">
+      <div class="row">
+         <div class="col-md-6">
+          <h1><span class="glyphicon glyphicon-chevron-right"></span> Contact List App <small>{{contactList.length}} Contacts</small></h1>
+        </div>
+        <div class="col-md-offset-2 col-md-4">
+          <br>
+          <div class="input-group input-group-md">
+            <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-search"></i></span>
+            <input type="text" name="name" class="form-control" ng-model="searchText" placeholder="Search">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+      <table class="table table-striped">
+        <thead>
+            <tr>
+              <th><i class="glyphicon glyphicon-user"></i> Name</th>
+              <th><i class="glyphicon glyphicon-envelope"></i> Email</th>
+              <th><i class="glyphicon glyphicon-phone"></i> Number</th>
+              <th><i class="glyphicon glyphicon-cog"></i> Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <form novalidate>
+              <td><input type="text"  class="form-control" ng-model="contact.name" placeholder="Full Name"></td>
+              <td><input type="email" class="form-control" ng-model="contact.email" placeholder="Email"></td>
+              <td><input type="tel" class="form-control" maxlength="8" ng-model="contact.number" placeholder="Phone number"></td>
+              <td>
+                <button class="btn btn-success" ng-click="add(contact)" ng-hide="editMode"><i class="glyphicon glyphicon-plus-sign"></i> Add contact</button>
+                <button class="btn btn-info" ng-click="update(contact)" ng-show="editMode"><i class="glyphicon glyphicon-ok"></i> Update</button>
+              </td>
+          </tr>
+          <tr ng-repeat="contact in contactList | orderBy:'name'| filter:searchText">
+              <td>{{contact.name}}</td>
+              <td>{{contact.email}}</td>
+              <td>{{contact.number | phonenumber}}</td>
+              <td>
+                <button class="btn btn-sm btn-danger" ng-click="remove(contact._id)"><i class="glyphicon glyphicon-trash"></i> Remove</button>
+                <button class="btn btn-sm btn-warning" ng-click="edit(contact._id)"><i class="glyphicon glyphicon-edit"></i> Edit</button>
+              </td>
+          </tr>
+        </form>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+
+  <script src="/vendors/js/jquery.min.js"></script>
+  <script src="/vendors/js/angular.min.js"></script>
+  <script src="/public/js/controller.js"></script>
+  <script src="/public/js/directive.js"></script>
+  <script src="/vendors/js/utils.js"></script>
+  <script src="/vendors/js/intlTelInput.min.js"></script>
+  </body>
+</html>
