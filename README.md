@@ -1,12 +1,10 @@
 # Sample MEAN Contact List
 A Sample [MongoDB](https://www.mongodb.org/), [Express](http://expressjs.com), [Angular JS](https://angularjs.org), [Node JS](http://nodejs.org/) Contact List App
 
-<<<<<<< HEAD
-=======
+
 ##Configuration
 
 ###Database
->>>>>>> 0ac108c... README formating
 Go to __server/config/config.js__ and edit mongodb __url__ to your own mongodb URI
 [mongodb://username:password@host:port/dbname](https://docs.mongodb.org/manual/reference/connection-string/)
 
